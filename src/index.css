@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "HARRYP";
+    src: url("src/fonts/HARRYP.TTF");
+}
+@font-face {
+    font-family: "LIBRO";
+    src: url("src/fonts/Libro.ttf");
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family:'Courier New', Courier, monospace;
+    color: #ffffff;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #040b0b;
+    overflow-x: hidden !important;
+}
+.layer1{
+    width: 100%;
+    max-width: 100svw;
+
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: translate 1s .5s ease-in-out forwards;
+}
+.layer2{
+    width: 100%;
+    max-width: 100svw;
+
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.title{
+    animation: translate 1.5s 1s ease-in-out forwards;
+}
+@keyframes translate {
+    from{
+        transform: translateY(500px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
+
+.slider{
+    margin-bottom: 35px;
+    max-width: 600px;
+    height: 300px;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+}
+.slider > div {
+    position: absolute;
+    width: 200px;
+    height: 100%;
+
+    transition: all .5s;
+}
+.slider div.hidden-left{
+    left: 10%;
+    transition-delay: 500ms;
+}
+.slider div.show{
+    z-index: 100;
+    position: absolute;
+    left: 50%;
+    transform: scale(1.15) translateX(-50%);
+    transition-delay: 1500ms;
+}
+.slider div.hidden-right{
+    right: 10%;
+    transition-delay: 1000ms;
+}
+div.book-container{
+    padding: 50px 25px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(100px,200px));
+    justify-content: center;
+    gap: 25px;
+}
+div.book-container > div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+div.book-container > div > figure > img{
+    object-fit: cover;
+    height: 250px;
+}
+.filters > input,select{
+    background-color: #040b0baa;
+    padding: 7.5px 10px;
+    border-radius: 5px;
+}
+
+div.list-book-container{
+    padding: 50px 25px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,450px));
+    justify-content: center;
+    gap: 50px;
+}
+
+div.modal-show{
+    height: 100svh !important;
+    width: 100svw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000000;
+    transition: all .5s;
+    overflow-y: auto;
+}
+div.modal-show > div{
+    display: flex;
+}
+
+
+div.modal-hidden{
+    height: 100svh;
+    width: 100svw;
+    position: fixed;
+    background-color: #0001;
+    z-index: -1;
+    opacity: 0;
+}
+.lazy{
+    opacity: 0;
+}
