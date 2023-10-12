@@ -45,7 +45,7 @@ export const Editorial = () => {
           <h3 className="text-center font-bold">Enjoy your jouney with our titles</h3>
         </div>
       </section>
-      <div className="layer2 bg-[url('src/svg/layer2.svg')] h-[360px]"></div>
+      <div className="layer2 bg-[url('/svg/layer2.svg')] h-[360px]"></div>
     </>
   )
 }
